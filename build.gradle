@@ -1,0 +1,32 @@
+import com.sun.org.apache.xalan.internal.xsltc.cmdline.Compile
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.cms.playaround'
+version '1.0-SNAPSHOT'
+
+mainClassName = "com.play.capitalCity"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.4.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.4.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.4.0'
+}
+
+run { 
+    standardInput = System.in
+}
+
+test{
+    useJUnitPlatform()
+}
